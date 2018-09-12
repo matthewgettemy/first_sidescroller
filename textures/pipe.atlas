@@ -1,0 +1,19 @@
+{
+    "world_features.png": {
+        "pink_pipe":  [268, 277, 32, 30],
+        "green_pipe": [304, 277, 32, 30],
+        "grey_pipe":  [340, 277, 32, 30],
+        "orange_pipe":[376, 277, 32, 30],
+        "purple_pipe":[412, 277, 32, 30],
+        "beige_pipe": [449, 277, 32, 30],
+        "yellow_pipe":[485, 277, 32, 30],
+        "pink_pipe_top":  [268, 307, 32, 16],
+        "green_pipe_top": [304, 307, 32, 16],
+        "grey_pipe_top":  [340, 307, 32, 16],
+        "orange_pipe_top":[376, 307, 32, 16],
+        "purple_pipe_top":[412, 307, 32, 16],
+        "beige_pipe_top": [449, 307, 32, 16],
+        "yellow_pipe_top":[485, 307, 32, 16]
+
+    }
+}
