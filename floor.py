@@ -4,7 +4,7 @@ import logging
 
 from kivy.uix.widget import Widget
 from kivy.core.window import Window
-from kivy.graphics import Rectangle, Color
+from kivy.graphics import Rectangle
 from kivy.animation import Animation
 from kivy.atlas import Atlas
 from kivy.core.image import Image as CoreImage
@@ -49,13 +49,13 @@ class GroundPlatform(Platform):
 
 
 class FloatingPlatform(Platform):
-    def __init__(self, pos, size, num_blocks, block_type):
+    def __init__(self, pos, size, uvsize, block_type):
         self.pos = pos
         self.size = size
-        self.num_blocks = num_blocks
+        self.uvsize = uvsize
         self.block_type = block_type
         self.texture = CoreImage('./textures/stone.png').texture
-        super(FloatingPlatform, self).__init__(self.pos, self.size, self.texture, repeat=True, uvsize=(self.num_blocks, 1))
+        super(FloatingPlatform, self).__init__(self.pos, self.size, self.texture, repeat=True, uvsize=self.uvsize)
 
     def update(self):
         pass

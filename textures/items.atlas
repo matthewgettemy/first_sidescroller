@@ -1,17 +1,5 @@
 {
     "world_features.png": {
-        "yellow_block":    [520, 309, 16, 16],
-        "green_block":     [538, 309, 16, 16],
-        "pink_block":      [556, 309, 16, 16],
-        "purple_block":    [574, 309, 16, 16],
-        "brown_block":     [592, 309, 16, 16],
-        "green_star_block":[610, 309, 16, 16],
-        "clear_block":     [628, 309, 16, 16],
-        "coconut_block":   [645, 309, 16, 16],
-
-        "grey_block":    [627, 329, 16, 16],
-        "slant_block":   [644, 329, 16, 16],
-        "note_block":    [575, 329, 16, 16],
-        "question_block":[575, 346, 16, 16]
+      "feather": [556, 364, 16, 16]
     }
 }

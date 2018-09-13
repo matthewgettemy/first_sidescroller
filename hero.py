@@ -9,6 +9,7 @@ log = logging.getLogger('{}'.format(__name__))
 
 class Hero(Widget):
     def __init__(self):
+
         super(Hero, self).__init__()
 
     def update(self):

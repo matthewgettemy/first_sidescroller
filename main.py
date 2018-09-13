@@ -39,17 +39,23 @@ class World(Widget):
         self.pfm = floor.PlatformManager()
         self.add_widget(self.pfm)
         self.pfm.add_ground_platform(pos=(0, 0), size=(BLOCK_SIZE*10, BLOCK_SIZE), num_blocks=10, block_type='question_block')
-        self.pfm.add_hit_block(pos=(BLOCK_SIZE, BLOCK_SIZE), size=(BLOCK_SIZE, BLOCK_SIZE), block_type='yellow_block')
-        self.pfm.add_floating_platform(pos=(BLOCK_SIZE, BLOCK_SIZE*2), size=(BLOCK_SIZE, BLOCK_SIZE), num_blocks=1, block_type='yellow_block')
+        self.pfm.add_hit_block(pos=(BLOCK_SIZE*9, BLOCK_SIZE*3), size=(BLOCK_SIZE, BLOCK_SIZE), block_type='yellow_block')
+        self.pfm.add_floating_platform(pos=(BLOCK_SIZE*10, BLOCK_SIZE*3), size=(BLOCK_SIZE*5, BLOCK_SIZE*2), uvsize=(5,2), block_type='yellow_block')
+
+        self.im = item.ItemManager()
+        self.add_widget(self.im)
+        self.im.add_feather(pos=(300, 300), size=(BLOCK_SIZE, BLOCK_SIZE), type='feather')
+        self.im.add_feather(pos=(600, 500), size=(BLOCK_SIZE, BLOCK_SIZE), type='feather')
+
 
         mario = hero.Hero()
-        feather = item.Feather()
+
         #ground = floor.GroundPlatform(pos=(0, 0), size=(BLOCK_SIZE*10, BLOCK_SIZE), num_blocks=10, block_type='question_block')
         #hitblock = floor.HitBlock(pos=(BLOCK_SIZE, BLOCK_SIZE), size=(BLOCK_SIZE, BLOCK_SIZE), block_type='yellow_block')
         koopa = enemy.Koopa()
         pipe = feature.Pipe()
         self.add_widget(mario)
-        self.add_widget(feather)
+
         #self.add_widget(ground)
         #self.add_widget(hitblock)
         self.add_widget(koopa)
