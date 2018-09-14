@@ -15,6 +15,7 @@ import floor
 import enemy
 import feature
 import hero
+import user_input
 
 
 if platform == 'android':
@@ -33,6 +34,9 @@ class World(Widget):
         self.log.info('Initializing World.')
         super(World, self).__init__()
 
+        self.input_controller = user_input.InputController(platform)
+        self.add_widget(self.input_controller)
+
     def initialize_world(self):
         self.log.info('Adding initial elements to world.')
 
@@ -48,19 +52,19 @@ class World(Widget):
         self.im.add_feather(pos=(600, 500), size=(BLOCK_SIZE, BLOCK_SIZE), type='feather')
 
 
-        mario = hero.Hero()
-
-        #ground = floor.GroundPlatform(pos=(0, 0), size=(BLOCK_SIZE*10, BLOCK_SIZE), num_blocks=10, block_type='question_block')
-        #hitblock = floor.HitBlock(pos=(BLOCK_SIZE, BLOCK_SIZE), size=(BLOCK_SIZE, BLOCK_SIZE), block_type='yellow_block')
+        mario = hero.Hero(pos=(BLOCK_SIZE, BLOCK_SIZE), size=(BLOCK_SIZE*2, BLOCK_SIZE*2.5))
+        ground = floor.GroundPlatform(pos=(0, 0), size=(BLOCK_SIZE*10, BLOCK_SIZE), num_blocks=10, block_type='question_block')
+        hitblock = floor.HitBlock(pos=(BLOCK_SIZE, BLOCK_SIZE), size=(BLOCK_SIZE, BLOCK_SIZE), block_type='yellow_block')
         koopa = enemy.Koopa()
         pipe = feature.Pipe()
         self.add_widget(mario)
-
-        #self.add_widget(ground)
-        #self.add_widget(hitblock)
+        self.add_widget(ground)
+        self.add_widget(hitblock)
         self.add_widget(koopa)
         self.add_widget(pipe)
         self.log.info('Done adding initial elements to world.')
+
+        self.input_controller.bring_touchscreen_components_to_front()
 
     def update(self):
         self.log.debug('World update.')
